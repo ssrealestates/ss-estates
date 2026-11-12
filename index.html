@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SS Real Estates | Mukunda Enclave - Paritala</title>
+  <title>SS Real Estates | Mukunda Enclave & Hanuman Heights</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
     body { background: #f4f6f9; color: #1e293b; line-height: 1.5; }
@@ -25,20 +25,21 @@
     .intro-hero h2 { font-size: 19px; color: #ffd54f; margin-bottom: 14px; }
     .intro-hero p { max-width: 600px; margin: 0 auto 24px; color: #cbd5e1; font-size: 15px; }
     .btn { display: inline-block; background: #ffd54f; color: #041c36; padding: 12px 26px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
-    .btn-wa { display: inline-block; background: #25d366; color: #ffffff; padding: 12px 26px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
+    .btn-wa { display: inline-block; background: #25d366; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
 
-    /* ================= PROJECT & CONTACT ================= */
-    .wrap { max-width: 850px; margin: 0 auto; padding: 45px 20px; }
+    /* ================= PROJECTS & CONTACT ================= */
+    .wrap { max-width: 960px; margin: 0 auto; padding: 45px 20px; }
     .title { text-align: center; margin-bottom: 28px; }
     .title h2 { font-size: 26px; color: #041c36; margin-bottom: 6px; }
     .title p { color: #64748b; }
-    .project-card { background: #fff; border-radius: 10px; padding: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 5px solid #ffd54f; text-align: center; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .project-card { background: #fff; border-radius: 10px; padding: 30px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 5px solid #ffd54f; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
     .tag { display: inline-block; background: #041c36; color: #ffd54f; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 4px; margin-bottom: 12px; }
-    .project-card h3 { color: #041c36; font-size: 26px; margin-bottom: 8px; }
-    .loc { color: #166534; font-weight: bold; font-size: 16px; margin-bottom: 14px; }
-    .project-card p { font-size: 15px; color: #475569; max-width: 580px; margin: 0 auto 22px; }
-    .highlights { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 24px; }
-    .pill { background: #f8fafc; border: 1px solid #cbd5e1; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: bold; color: #041c36; }
+    .project-card h3 { color: #041c36; font-size: 24px; margin-bottom: 8px; }
+    .loc { color: #166534; font-weight: bold; font-size: 15px; margin-bottom: 14px; }
+    .project-card p { font-size: 15px; color: #475569; margin: 0 auto 20px; }
+    .highlights { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 22px; }
+    .pill { background: #f8fafc; border: 1px solid #cbd5e1; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; color: #041c36; }
     .contact-box { background: #041c36; color: #fff; border-radius: 10px; padding: 32px; border-top: 4px solid #ffd54f; text-align: center; }
     .contact-box h3 { color: #ffd54f; font-size: 24px; margin-bottom: 16px; }
     .contact-row { margin-bottom: 14px; font-size: 16px; }
@@ -52,7 +53,7 @@
   <header>
     <div class="logo">SS <span>REAL ESTATES</span></div>
     <nav>
-      <a href="#project">Project</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -67,28 +68,50 @@
     <div class="badge">DREAM - INVEST - GROW</div>
     <h1>SS Real Estates</h1>
     <h2>Own a Piece of Amaravati's Future</h2>
-    <p>Transparent Deals - Trusted Partner. Clear-title open plots with easy access to major roads in the Amaravati growth corridor.</p>
-    <a href="#project" class="btn">View Project</a>
+    <p>Transparent Deals - Trusted Partner. Clear-title properties with easy access to major roads across Amaravati and Vijayawada.</p>
+    <a href="#projects" class="btn">View Projects</a>
   </section>
 
-  <div class="wrap" id="project">
+  <div class="wrap" id="projects">
     <div class="title">
-      <h2>Featured Project</h2>
+      <h2>Featured Projects</h2>
       <p>Invest Today, Build a Better Tomorrow</p>
     </div>
 
-    <div class="project-card">
-      <span class="tag">OPEN PLOTS AVAILABLE</span>
-      <h3>Mukunda Enclave</h3>
-      <div class="loc">Address: Paritala</div>
-      <p>Clear-title residential open plots strategically located at Paritala with easy access to NH-65 and major Amaravati corridors.</p>
-      <div class="highlights">
-        <span class="pill">Clear Title</span>
-        <span class="pill">Secure Investment</span>
-        <span class="pill">Easy Road Access</span>
-        <span class="pill">Prime Location</span>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div>
+          <span class="tag">OPEN PLOTS AVAILABLE</span>
+          <h3>Mukunda Enclave</h3>
+          <div class="loc">Address: Paritala</div>
+          <p>Clear-title residential open plots strategically located at Paritala with easy access to NH-65 and major Amaravati corridors.</p>
+          <div class="highlights">
+            <span class="pill">Clear Title</span>
+            <span class="pill">Secure Investment</span>
+            <span class="pill">Easy Road Access</span>
+          </div>
+        </div>
+        <div>
+          <a href="whatsapp://send?phone=919993896836&text=Hello%20SS%20Real%20Estates,%20I%20want%20details%20for%20Mukunda%20Enclave%20in%20Paritala." class="btn-wa">Inquire on WhatsApp</a>
+        </div>
       </div>
-      <a href="whatsapp://send?phone=919993896836&text=Hello%20SS%20Real%20Estates,%20I%20want%20details%20for%20Mukunda%20Enclave%20in%20Paritala." class="btn-wa">Inquire on WhatsApp</a>
+
+      <div class="project-card">
+        <div>
+          <span class="tag">PRIME VIJAYAWADA</span>
+          <h3>Hanuman Heights</h3>
+          <div class="loc">Address: Ramavarapadu, Vijayawada</div>
+          <p>Strategically situated at Ramavarapadu in Vijayawada with seamless highway connectivity and high growth potential.</p>
+          <div class="highlights">
+            <span class="pill">Clear Title</span>
+            <span class="pill">Prime Connectivity</span>
+            <span class="pill">High Growth Zone</span>
+          </div>
+        </div>
+        <div>
+          <a href="whatsapp://send?phone=919993896836&text=Hello%20SS%20Real%20Estates,%20I%20want%20details%20for%20Hanuman%20Heights%20in%20Ramavarapadu,%20Vijayawada." class="btn-wa">Inquire on WhatsApp</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -100,10 +123,10 @@
         <a href="tel:+919993896836">+91 99938 96836</a>
       </div>
       <div class="contact-row">
-        <strong>Project Address:</strong> Mukunda Enclave, Paritala
+        <strong>Projects:</strong> Mukunda Enclave (Paritala) &bull; Hanuman Heights (Ramavarapadu, Vijayawada)
       </div>
       <div class="btn-group">
-        <a href="whatsapp://send?phone=919993896836&text=Hello%20SS%20Real%20Estates,%20I%20would%20like%20to%20book%20a%20site%20visit%20for%20Mukunda%20Enclave." class="btn-wa">Chat on WhatsApp</a>
+        <a href="whatsapp://send?phone=919993896836&text=Hello%20SS%20Real%20Estates,%20I%20would%20like%20to%20book%20a%20site%20visit." class="btn-wa">Chat on WhatsApp</a>
         <a href="tel:+919993896836" class="btn">Call +91 99938 96836</a>
       </div>
     </div>
