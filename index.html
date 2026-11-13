@@ -3,139 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SS Real Estates | Mukunda Enclave & Hanuman Heights</title>
+  <title>SS Real Estates | Mukunda Fortune & Quantum City</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
     body { background: #f4f6f9; color: #1e293b; line-height: 1.5; }
-    header { background: #041c36; color: #fff; padding: 16px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #ffd54f; }
-    .logo { font-size: 22px; font-weight: bold; }
+
+    /* INTRO */
+    #skip { display: none; }
+    #skip:checked ~ #intro { display: none; }
+    #intro { position: fixed; inset: 0; background: #041c36; color: #fff; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; animation: hide 0.6s ease forwards 3s; }
+    .ring { width: 180px; height: 180px; border-radius: 50%; border: 4px solid #ffd54f; background: #082d54; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 16px; }
+    .ring b { font-size: 20px; color: #ffd54f; }
+    .ring small { font-size: 10px; letter-spacing: 2px; color: #fff; }
+    .skip-btn { margin-top: 18px; border: 1px solid #ffd54f; color: #ffd54f; padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; }
+    @keyframes hide { to { opacity: 0; visibility: hidden; pointer-events: none; z-index: -1; } }
+
+    /* HEADER & HERO */
+    header { background: #041c36; color: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #ffd54f; }
+    .logo { font-size: 20px; font-weight: bold; }
     .logo span { color: #ffd54f; }
-    nav a { color: #fff; text-decoration: none; margin-left: 16px; font-weight: bold; font-size: 14px; }
+    nav a { color: #fff; text-decoration: none; margin-left: 14px; font-size: 14px; font-weight: bold; }
+    .hero { background: #082d54; color: #fff; text-align: center; padding: 40px 20px; border-bottom: 4px solid #ffd54f; }
+    .hero h1 { font-size: 30px; margin-bottom: 6px; }
+    .hero h2 { font-size: 17px; color: #ffd54f; margin-bottom: 12px; }
+    .hero p { max-width: 550px; margin: 0 auto 20px; color: #cbd5e1; font-size: 14px; }
 
-    /* ================= INTRO & HERO EMBLEM ================= */
-    .intro-hero { background: radial-gradient(circle at center, #082d54 0%, #021122 100%); color: #fff; text-align: center; padding: 60px 20px; border-bottom: 4px solid #ffd54f; }
-    .emblem-circle { width: 230px; height: 230px; border-radius: 50%; border: 4px solid #ffd54f; background: radial-gradient(circle at center, #0d3b66 0%, #031529 100%); box-shadow: 0 0 30px rgba(255, 213, 79, 0.35); margin: 0 auto 22px auto; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 18px; }
-    .emblem-sub { font-size: 12px; letter-spacing: 3px; color: #fff; font-weight: bold; margin-bottom: 4px; }
-    .emblem-main { font-size: 25px; font-weight: 900; letter-spacing: 1.5px; color: #ffd54f; line-height: 1.2; margin-bottom: 6px; }
-    .emblem-mid { font-size: 10px; letter-spacing: 2px; color: #fff; font-weight: bold; margin-bottom: 2px; }
-    .emblem-tag { font-size: 10px; letter-spacing: 1.5px; color: #ffd54f; font-weight: bold; }
+    /* BUTTONS */
+    .btn { display: inline-block; background: #ffd54f; color: #041c36; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; margin: 4px; cursor: pointer; }
+    .btn-wa { display: inline-block; background: #25d366; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; margin: 4px; }
 
-    .badge { display: inline-block; border: 1px solid #ffd54f; color: #ffd54f; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 12px; }
-    .intro-hero h1 { font-size: 34px; margin-bottom: 6px; }
-    .intro-hero h2 { font-size: 19px; color: #ffd54f; margin-bottom: 14px; }
-    .intro-hero p { max-width: 600px; margin: 0 auto 24px; color: #cbd5e1; font-size: 15px; }
-    .btn { display: inline-block; background: #ffd54f; color: #041c36; padding: 12px 26px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
-    .btn-wa { display: inline-block; background: #25d366; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
+    /* MAIN COLUMNS */
+    .wrap { max-width: 1050px; margin: 0 auto; padding: 35px 20px; }
+    .two-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-bottom: 35px; align-items: start; }
+    .col-card { background: #fff; border-radius: 10px; padding: 26px 18px; box-shadow: 0 3px 12px rgba(0,0,0,0.08); border-top: 5px solid #ffd54f; text-align: center; }
+    .tag { background: #041c36; color: #ffd54f; font-size: 11px; font-weight: bold; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+    .col-card h3 { font-size: 24px; color: #041c36; margin-bottom: 8px; }
+    .col-card p { font-size: 14px; color: #475569; margin-bottom: 16px; }
 
-    /* ================= PROJECTS & CONTACT ================= */
-    .wrap { max-width: 960px; margin: 0 auto; padding: 45px 20px; }
-    .title { text-align: center; margin-bottom: 28px; }
-    .title h2 { font-size: 26px; color: #041c36; margin-bottom: 6px; }
-    .title p { color: #64748b; }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .project-card { background: #fff; border-radius: 10px; padding: 30px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 5px solid #ffd54f; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
-    .tag { display: inline-block; background: #041c36; color: #ffd54f; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 4px; margin-bottom: 12px; }
-    .project-card h3 { color: #041c36; font-size: 24px; margin-bottom: 8px; }
-    .loc { color: #166534; font-weight: bold; font-size: 15px; margin-bottom: 14px; }
-    .project-card p { font-size: 15px; color: #475569; margin: 0 auto 20px; }
-    .highlights { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 22px; }
-    .pill { background: #f8fafc; border: 1px solid #cbd5e1; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; color: #041c36; }
-    .contact-box { background: #041c36; color: #fff; border-radius: 10px; padding: 32px; border-top: 4px solid #ffd54f; text-align: center; }
-    .contact-box h3 { color: #ffd54f; font-size: 24px; margin-bottom: 16px; }
-    .contact-row { margin-bottom: 14px; font-size: 16px; }
-    .contact-row a { color: #ffd54f; font-weight: bold; text-decoration: underline; margin: 0 6px; }
-    .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 22px; }
-    footer { background: #021122; color: #94a3b8; text-align: center; padding: 25px 20px; font-size: 14px; }
+    /* DRAWER TOGGLES */
+    #toggle-plots, #toggle-villas { display: none; }
+    .card-trigger { display: block; cursor: pointer; }
+    .drawer { display: none; margin-top: 16px; }
+    #toggle-plots:checked ~ .drawer, #toggle-villas:checked ~ .drawer { display: block; }
+    #toggle-plots:checked ~ .open-label, #toggle-villas:checked ~ .open-label { display: none; }
+    .close-label { display: none; font-size: 13px; color: #64748b; text-decoration: underline; cursor: pointer; margin-top: 14px; }
+    #toggle-plots:checked ~ .close-label, #toggle-villas:checked ~ .close-label { display: inline-block; }
+
+    /* PROJECT BOX */
+    .project-box { background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 16px 14px; margin-bottom: 16px; text-align: left; }
+    .project-box h4 { font-size: 20px; color: #041c36; margin-bottom: 4px; }
+    .proj-addr { font-size: 14px; font-weight: bold; color: #166534; margin-bottom: 10px; }
+    .hl-title { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #041c36; font-weight: bold; margin: 12px 0 8px; }
+
+    /* SELECTABLE 4 COLUMNS FOR VILLAS */
+    .v-radio { display: none; }
+    .select-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 14px; }
+    .select-box { display: block; background: #fff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 10px 6px; text-align: center; font-size: 13px; font-weight: bold; color: #041c36; cursor: pointer; }
+
+    #opt-open:checked ~ .select-cols label[for="opt-open"],
+    #opt-2bhk:checked ~ .select-cols label[for="opt-2bhk"],
+    #opt-3bhk:checked ~ .select-cols label[for="opt-3bhk"],
+    #opt-4bhk:checked ~ .select-cols label[for="opt-4bhk"] {
+      background: #041c36;
+      color: #ffd54f;
+      border-color: #041c36;
+    }
+
+    .action-bar { text-align: center; margin-top: 14px; }
+    .wa-dynamic { display: none; }
+    #opt-open:checked ~ .action-bar .wa-open,
+    #opt-2bhk:checked ~ .action-bar .wa-2bhk,
+    #opt-3bhk:checked ~ .action-bar .wa-3bhk,
+    #opt-4bhk:checked ~ .action-bar .wa-4bhk { display: inline-block; }
+
+    .hl-list { list-style: none; padding: 0; }
+    .hl-list li { font-size: 13px; color: #334155; padding: 5px 0 5px 16px; position: relative; border-bottom: 1px solid #e2e8f0; }
+    .hl-list li:last-child { border-bottom: none; }
+    .hl-list li::before { content: "✔"; position: absolute; left: 0; color: #166534; font-weight: bold; font-size: 11px; }
+
+    /* BOTTOM CONTACT */
+    .contact { background: #041c36; color: #fff; border-radius: 10px; padding: 28px 20px; border-top: 5px solid #ffd54f; text-align: center; max-width: 750px; margin: 0 auto; }
+    .contact h2 { color: #ffd54f; margin-bottom: 14px; }
+    .c-row { margin-bottom: 10px; font-size: 15px; }
+    .c-row a { color: #ffd54f; font-weight: bold; }
+    footer { background: #021122; color: #94a3b8; text-align: center; padding: 18px; font-size: 13px; }
   </style>
 </head>
 <body>
 
+  <input type="checkbox" id="skip" />
+  <div id="intro">
+    <div class="ring"><small>INVEST IN</small><b>AMARAVATI</b><small>THE PEOPLE'S CAPITAL</small></div>
+    <h2>SS <span style="color:#ffd54f;">REAL ESTATES</span></h2>
+    <p style="color:#ffd54f; font-size:14px; margin-top:4px;">Own a Piece of Amaravati's Future</p>
+    <label for="skip" class="skip-btn">Skip Intro &rarr;</label>
+  </div>
+
   <header>
     <div class="logo">SS <span>REAL ESTATES</span></div>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <nav><a href="#categories">Properties</a><a href="#contact">Contact</a></nav>
   </header>
 
-  <section class="intro-hero">
-    <div class="emblem-circle">
-      <div class="emblem-sub">INVEST IN</div>
-      <div class="emblem-main">AMARAVATI</div>
-      <div class="emblem-mid">BUILDING THE FUTURE</div>
-      <div class="emblem-tag">THE PEOPLE'S CAPITAL</div>
-    </div>
-    <div class="badge">DREAM - INVEST - GROW</div>
+  <section class="hero">
     <h1>SS Real Estates</h1>
     <h2>Own a Piece of Amaravati's Future</h2>
-    <p>Transparent Deals - Trusted Partner. Clear-title properties with easy access to major roads across Amaravati and Vijayawada.</p>
-    <a href="#projects" class="btn">View Projects</a>
+    <p>Dream - Invest - Grow. Clear-title properties across Amaravati and Vijayawada.</p>
+    <a href="#categories" class="btn">Explore Properties</a>
+    <a href="#contact" class="btn-wa">Contact Us</a>
   </section>
 
-  <div class="wrap" id="projects">
-    <div class="title">
-      <h2>Featured Projects</h2>
-      <p>Invest Today, Build a Better Tomorrow</p>
-    </div>
+  <div class="wrap" id="categories">
+    <div class="two-cols">
 
-    <div class="projects-grid">
-      <div class="project-card">
-        <div>
-          <span class="tag">OPEN PLOTS AVAILABLE</span>
-          <h3>Mukunda Enclave</h3>
-          <div class="loc">Address: Paritala</div>
-          <p>Clear-title residential open plots strategically located at Paritala with easy access to NH-65 and major Amaravati corridors.</p>
-          <div class="highlights">
-            <span class="pill">Clear Title</span>
-            <span class="pill">Secure Investment</span>
-            <span class="pill">Easy Road Access</span>
+      <!-- COLUMN 1: OPEN PLOTS -->
+      <div class="col-card">
+        <input type="checkbox" id="toggle-plots" />
+        <label for="toggle-plots" class="card-trigger">
+          <span class="tag">RESIDENTIAL &amp; INVESTMENT</span>
+          <h3>Open Plots</h3>
+          <p>Clear-title residential open plots with wide roads and easy highway connectivity.</p>
+        </label>
+        <label for="toggle-plots" class="btn open-label">View Open Plots Project &darr;</label>
+
+        <div class="drawer">
+          <div class="project-box">
+            <h4>Mukunda Fortune</h4>
+            <div class="proj-addr">Address: Paritala</div>
+            <div class="hl-title">Location Highlights</div>
+            <ul class="hl-list">
+              <li>A layout being developed facing NH-65</li>
+              <li>Close to Amritha Sai, MVR College &amp; MIC Engg College</li>
+              <li>10 Mins to Amaravati Capital</li>
+              <li>20 Mins to Vijayawada City</li>
+              <li>30 Mins to Gannavaram Airport</li>
+              <li>Located between IRR, ORR &amp; Iconic Bridge</li>
+            </ul>
           </div>
+          <a href="whatsapp://send?phone=919492944465&text=Hello%20SS%20Real%20Estates,%20I%20am%20interested%20in%20Mukunda%20Fortune%20Open%20Plots%20at%20Paritala." class="btn-wa">WhatsApp</a>
+          <a href="tel:+919492944465" class="btn">Contact</a>
         </div>
-        <div>
-          <a href="whatsapp://send?phone=919993896836&text=Hello%20SS%20Real%20Estates,%20I%20want%20details%20for%20Mukunda%20Enclave%20in%20Paritala." class="btn-wa">Inquire on WhatsApp</a>
-        </div>
+        <label for="toggle-plots" class="close-label">Hide Details &uarr;</label>
       </div>
 
-      <div class="project-card">
-        <div>
-          <span class="tag">PRIME VIJAYAWADA</span>
-          <h3>Hanuman Heights</h3>
-          <div class="loc">Address: Ramavarapadu, Vijayawada</div>
-          <p>Strategically situated at Ramavarapadu in Vijayawada with seamless highway connectivity and high growth potential.</p>
-          <div class="highlights">
-            <span class="pill">Clear Title</span>
-            <span class="pill">Prime Connectivity</span>
-            <span class="pill">High Growth Zone</span>
-          </div>
-        </div>
-        <div>
-          <a href="whatsapp://send?phone=919993896836&text=Hello%20SS%20Real%20Estates,%20I%20want%20details%20for%20Hanuman%20Heights%20in%20Ramavarapadu,%20Vijayawada." class="btn-wa">Inquire on WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
+      <!-- COLUMN 2: VILLAS -->
+      <div class="col-card">
+        <input type="checkbox" id="toggle-villas" />
+        <label for="toggle-villas" class="card-trigger">
+          <span class="tag">LUXURY LIVING</span>
+          <h3>Villas</h3>
+          <p>Open villa plots and 2 BHK, 3 BHK &amp; 4 BHK luxury villas in Amaravati Capital City.</p>
+        </label>
+        <label for="toggle-villas" class="btn open-label">View Villas Project &darr;</label>
 
-  <div class="wrap" id="contact">
-    <div class="contact-box">
-      <h3>Contact SS Real Estates</h3>
-      <div class="contact-row">
-        <strong>Mobile &amp; WhatsApp:</strong>
-        <a href="tel:+919993896836">+91 99938 96836</a>
-      </div>
-      <div class="contact-row">
-        <strong>Projects:</strong> Mukunda Enclave (Paritala) &bull; Hanuman Heights (Ramavarapadu, Vijayawada)
-      </div>
-      <div class="btn-group">
-        <a href="whatsapp://send?phone=919993896836&text=Hello%20SS%20Real%20Estates,%20I%20would%20like%20to%20book%20a%20site%20visit." class="btn-wa">Chat on WhatsApp</a>
-        <a href="tel:+919993896836" class="btn">Call +91 99938 96836</a>
-      </div>
-    </div>
-  </div>
+        <div class="drawer">
+          <div class="project-box">
+            <h4>Quantum City</h4>
+            <div class="proj-addr">Address: Tadikonda, Amaravati Capital City</div>
 
-  <footer>
-    <p><strong>SS Real Estates</strong> - Dream - Invest - Grow</p>
-    <p>Phone: +91 99938 96836</p>
-  </footer>
+            <div class="hl-title">1. Select Property Type</div>
+            <input type="radio" name="villa-opt" id="opt-open" class="v-radio" checked />
+            <input type="radio" name="villa-opt" id="opt-2bhk" class="v-radio" />
+            <input type="radio" name="villa-opt" id="opt-3bhk" class="v-radio" />
+            <input type="radio" name="villa-opt" id="opt-4bhk" class="v-radio" />
 
-</body>
-</html>
+            <div class="select-cols">
+              <label for="opt-open" class="select-box">Open Villa Plots</label>
+              <label for="opt-2bhk" class="select-box">2 BHK Luxury Villas</label>
+              <label for="opt-3bhk" class="select-box">3 BHK Luxury Villas</label>
+              <label for="opt-4bhk" class="select-box">4 BHK Luxury Villas</label>
