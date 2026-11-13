@@ -74,7 +74,8 @@
     }
     #slot-done-toggle:checked ~ .receipt-box { display: block; }
     .receipt-box h3 { color: #166534; font-size: 20px; margin-bottom: 8px; }
-    .receipt-box p { color: #1e293b; font-size: 14px; font-weight: bold; line-height: 1.6; margin-bottom: 14px; }
+    .receipt-box p { color: #1e293b; font-size: 14px; font-weight: bold; line-height: 1.6; margin-bottom: 10px; }
+    .paste-tip { font-size: 13px; color: #166534; font-weight: bold; background: #ffffff; border: 1px dashed #166534; padding: 8px 12px; border-radius: 6px; margin-bottom: 14px; }
 
     .btn-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
     .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25d366; color: #fff; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; flex: 1; min-width: 160px; }
@@ -124,10 +125,10 @@
       <div class="form-group">
         <label for="project-select">3. Select Project Name</label>
         <select id="project-select">
-          <option value="AVANI PHASE 3 PREMIUM OPEN VILLA PLOTS Kaja Tollgate">AVANI PHASE 3 PREMIUM OPEN VILLA PLOTS (Kaja Tollgate)</option>
-          <option value="MUKUNDA FORTUNE Paritala Open Plots">MUKUNDA FORTUNE (Paritala - Open Plots)</option>
-          <option value="FORTUNE EMPIRE CITY Chalivendrapalem Amaravati">FORTUNE EMPIRE CITY (Chalivendrapalem, Amaravati)</option>
-          <option value="QUANTUM CITY Tadikonda Amaravati Villas">QUANTUM CITY (Tadikonda, Amaravati - Villas)</option>
+          <option value="AVANI PHASE 3 PREMIUM OPEN VILLA PLOTS (Kaja Tollgate)">AVANI PHASE 3 PREMIUM OPEN VILLA PLOTS (Kaja Tollgate)</option>
+          <option value="MUKUNDA FORTUNE (Paritala - Open Plots)">MUKUNDA FORTUNE (Paritala - Open Plots)</option>
+          <option value="FORTUNE EMPIRE CITY (Chalivendrapalem, Amaravati)">FORTUNE EMPIRE CITY (Chalivendrapalem, Amaravati)</option>
+          <option value="QUANTUM CITY (Tadikonda, Amaravati - Villas)">QUANTUM CITY (Tadikonda, Amaravati - Villas)</option>
         </select>
       </div>
 
@@ -140,9 +141,9 @@
         <div class="form-group">
           <label for="visit-time">5. Select Time Slot</label>
           <select id="visit-time">
-            <option value="Morning 10 AM to 1 PM">Morning (10:00 AM - 1:00 PM)</option>
-            <option value="Afternoon 2 PM to 5 PM">Afternoon (2:00 PM - 5:00 PM)</option>
-            <option value="Evening 5 PM to 7 PM">Evening (5:00 PM - 7:00 PM)</option>
+            <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
+            <option value="Afternoon (2:00 PM - 5:00 PM)">Afternoon (2:00 PM - 5:00 PM)</option>
+            <option value="Evening (5:00 PM - 7:00 PM)">Evening (5:00 PM - 7:00 PM)</option>
           </select>
         </div>
       </div>
@@ -151,13 +152,14 @@
 
       <div class="receipt-box" id="receipt-box">
         <h3>Your Free Site Visit Slot is Ready!</h3>
-        <p id="selected-details">Your slot details are ready. Tap Send on WhatsApp below to message +91 94929 44465.</p>
+        <p id="selected-details">Your slot details are copied. Tap Open WhatsApp below and paste them into the chat.</p>
+        <div class="paste-tip">1. Tap "Copy Slot Details" &rarr; 2. Tap "Open WhatsApp" &rarr; 3. Paste &amp; Send!</div>
         <div class="btn-row">
+          <button type="button" class="btn-dark" id="copy-btn">1. Copy Slot Details</button>
           <a href="https://wa.me" class="btn-wa" id="wa-send-btn">
             <svg class="wa-svg" viewBox="0 0 32 32"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.47.65 4.88 1.88 7L2 30l7.18-1.84A13.93 13.93 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.4c-2.2 0-4.35-.6-6.22-1.73l-.45-.27-4.26 1.09 1.14-4.15-.29-.46A11.35 11.35 0 0 1 4.6 16c0-6.29 5.11-11.4 11.4-11.4S27.4 9.71 27.4 16 22.29 27.4 16 27.4zm6.25-8.54c-.34-.17-2.03-1-2.34-1.12-.31-.11-.54-.17-.77.17-.23.34-.88 1.12-1.08 1.35-.2.23-.4.26-.74.09-.34-.17-1.45-.53-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.37-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.54-.28-.67-.56-.58-.77-.59h-.66c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86 0 1.69 1.23 3.32 1.4 3.55.17.23 2.42 3.7 5.86 5.18.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.14.66-.1 2.03-.83 2.31-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/></svg>
-            Send on WhatsApp
+            2. Open WhatsApp
           </a>
-          <button type="button" class="btn-dark" id="copy-btn">Copy Slot Details</button>
           <a href="tel:+919492944465" class="btn">Call +91 94929 44465</a>
         </div>
       </div>
@@ -183,12 +185,3 @@
       var phoneInput = document.getElementById('customer-phone');
       var dateInput = document.getElementById('visit-date');
       var projSelect = document.getElementById('project-select');
-      var timeSelect = document.getElementById('visit-time');
-      var detailsText = document.getElementById('selected-details');
-      var waSendBtn = document.getElementById('wa-send-btn');
-      var copyBtn = document.getElementById('copy-btn');
-      var summaryMessage = '';
-
-      if (dateInput) {
-        var today = new Date();
-        var nextMonth = new Date();
