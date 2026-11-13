@@ -27,9 +27,12 @@
     .sub-text { font-size: 15px; color: #475569; margin-bottom: 24px; }
 
     /* FORM FIELDS */
+    .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
     .form-group { margin-bottom: 18px; }
     .form-group label { display: block; font-size: 13px; font-weight: bold; color: #041c36; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
     .form-group select,
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
     .form-group input[type="date"] {
       width: 100%;
       padding: 12px 14px;
@@ -41,39 +44,42 @@
       background: #f8fafc;
     }
 
-    /* CONFIRM TOGGLE */
-    #slot-confirmed { display: none; }
-    .submit-btn {
-      display: block;
+    /* DIRECT WHATSAPP SUBMIT LINK */
+    .wa-submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       width: 100%;
-      background: #166534;
+      background: #25d366;
       color: #ffffff;
+      text-decoration: none;
       text-align: center;
-      padding: 14px 20px;
+      padding: 15px 20px;
       border-radius: 8px;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
       margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
     }
+    .wa-submit-btn:hover { background: #1ebe5d; }
+    .wa-svg { width: 20px; height: 20px; fill: #ffffff; flex-shrink: 0; }
 
-    .confirm-box {
-      display: none;
-      margin-top: 22px;
+    /* LIVE PREVIEW & STATUS */
+    .preview-box {
+      margin-top: 20px;
       background: #f0fdf4;
       border: 1.5px solid #166534;
       border-radius: 10px;
-      padding: 20px;
+      padding: 16px;
       text-align: center;
     }
-    #slot-confirmed:checked ~ .confirm-box { display: block; }
-    .confirm-box h3 { color: #166534; font-size: 19px; margin-bottom: 8px; }
-    .confirm-box p { color: #1e293b; font-size: 15px; font-weight: bold; margin-bottom: 16px; }
+    .preview-box h4 { color: #166534; font-size: 15px; margin-bottom: 6px; }
+    .preview-box p { color: #1e293b; font-size: 14px; font-weight: bold; line-height: 1.5; margin-bottom: 12px; }
 
-    /* BUTTONS */
-    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-    .btn { display: inline-block; background: #ffd54f; color: #041c36; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; text-align: center; flex: 1; min-width: 160px; }
-    .btn-wa { display: inline-block; background: #25d366; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; text-align: center; flex: 1; min-width: 160px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .btn { display: inline-block; background: #ffd54f; color: #041c36; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; flex: 1; min-width: 150px; border: none; cursor: pointer; }
 
     /* CONTACT */
     .contact { background: #041c36; color: #fff; border-radius: 10px; padding: 28px 20px; border-top: 5px solid #ffd54f; text-align: center; }
@@ -97,13 +103,24 @@
 
   <div class="wrap">
     <div class="booking-card">
-      <input type="checkbox" id="slot-confirmed" />
       <span class="tag">1-MONTH SCHEDULE</span>
       <h2>Book Your Site Visit</h2>
-      <p class="sub-text">Choose your preferred project, pick a date from the calendar, and select a convenient time slot.</p>
+      <p class="sub-text">Enter your details, choose your preferred project, pick a date from the calendar, and select a time slot.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="customer-name">1. Customer Name</label>
+          <input type="text" id="customer-name" placeholder="Enter your full name" />
+        </div>
+
+        <div class="form-group">
+          <label for="customer-phone">2. Mobile Number</label>
+          <input type="tel" id="customer-phone" placeholder="Enter 10-digit mobile number" maxlength="15" />
+        </div>
+      </div>
 
       <div class="form-group">
-        <label for="project-select">1. Select Project Name</label>
+        <label for="project-select">3. Select Project Name</label>
         <select id="project-select">
           <option value="AVANI PHASE 3 PREMIUM OPEN VILLA PLOTS (Kaja Tollgate)">AVANI PHASE 3 PREMIUM OPEN VILLA PLOTS (Kaja Tollgate)</option>
           <option value="MUKUNDA FORTUNE (Paritala - Open Plots)">MUKUNDA FORTUNE (Paritala - Open Plots)</option>
@@ -112,27 +129,32 @@
         </select>
       </div>
 
-      <div class="form-group">
-        <label for="visit-date">2. Select Date (Calendar - Next 30 Days)</label>
-        <input type="date" id="visit-date" />
+      <div class="form-row">
+        <div class="form-group">
+          <label for="visit-date">4. Select Date (Next 30 Days)</label>
+          <input type="date" id="visit-date" />
+        </div>
+
+        <div class="form-group">
+          <label for="visit-time">5. Select Time Slot</label>
+          <select id="visit-time">
+            <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
+            <option value="Afternoon (2:00 PM - 5:00 PM)">Afternoon (2:00 PM - 5:00 PM)</option>
+            <option value="Evening (5:00 PM - 7:00 PM)">Evening (5:00 PM - 7:00 PM)</option>
+          </select>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="visit-time">3. Select Time Slot</label>
-        <select id="visit-time">
-          <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
-          <option value="Afternoon (2:00 PM - 5:00 PM)">Afternoon (2:00 PM - 5:00 PM)</option>
-          <option value="Evening (5:00 PM - 7:00 PM)">Evening (5:00 PM - 7:00 PM)</option>
-        </select>
-      </div>
+      <a href="https://wa.me" target="_blank" rel="noopener" class="wa-submit-btn" id="wa-confirm-link">
+        <svg class="wa-svg" viewBox="0 0 32 32"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.47.65 4.88 1.88 7L2 30l7.18-1.84A13.93 13.93 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.4c-2.2 0-4.35-.6-6.22-1.73l-.45-.27-4.26 1.09 1.14-4.15-.29-.46A11.35 11.35 0 0 1 4.6 16c0-6.29 5.11-11.4 11.4-11.4S27.4 9.71 27.4 16 22.29 27.4 16 27.4zm6.25-8.54c-.34-.17-2.03-1-2.34-1.12-.31-.11-.54-.17-.77.17-.23.34-.88 1.12-1.08 1.35-.2.23-.4.26-.74.09-.34-.17-1.45-.53-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.37-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.54-.28-.67-.56-.58-.77-.59h-.66c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86 0 1.69 1.23 3.32 1.4 3.55.17.23 2.42 3.7 5.86 5.18.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.14.66-.1 2.03-.83 2.31-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/></svg>
+        Confirm Free Slot &amp; Open WhatsApp &rarr;
+      </a>
 
-      <label for="slot-confirmed" class="submit-btn" id="confirm-btn">Confirm Free Slot &rarr;</label>
-
-      <div class="confirm-box">
-        <h3>Your Free Site Visit Slot is Ready!</h3>
-        <p id="selected-details">Tap below to confirm your slot with our team on WhatsApp or by phone.</p>
+      <div class="preview-box">
+        <h4>Your Selected Slot Summary</h4>
+        <p id="selected-details"></p>
         <div class="btn-row">
-          <a href="https://wa.me" target="_blank" rel="noopener" class="btn-wa">Send on WhatsApp</a>
+          <button type="button" class="btn" id="copy-btn">Copy Slot Message</button>
           <a href="tel:+919492944465" class="btn">Call +91 94929 44465</a>
         </div>
       </div>
@@ -154,7 +176,16 @@
 
   <script>
     (function() {
+      var nameInput = document.getElementById('customer-name');
+      var phoneInput = document.getElementById('customer-phone');
       var dateInput = document.getElementById('visit-date');
+      var projSelect = document.getElementById('project-select');
+      var timeSelect = document.getElementById('visit-time');
+      var detailsText = document.getElementById('selected-details');
+      var waLink = document.getElementById('wa-confirm-link');
+      var copyBtn = document.getElementById('copy-btn');
+      var latestMessage = '';
+
       if (dateInput) {
         var today = new Date();
         var nextMonth = new Date();
@@ -168,17 +199,11 @@
         dateInput.value = minStr;
       }
 
-      var confirmBtn = document.getElementById('confirm-btn');
-      if (confirmBtn) {
-        confirmBtn.addEventListener('click', function() {
-          var proj = document.getElementById('project-select').value;
-          var dt = document.getElementById('visit-date').value;
-          var tm = document.getElementById('visit-time').value;
-          document.getElementById('selected-details').textContent = 'Project: ' + proj + ' | Date: ' + dt + ' | Time: ' + tm;
-        });
-      }
-    })();
-  </script>
+      function syncBooking() {
+        var cName = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : 'Not Entered';
+        var cPhone = (phoneInput && phoneInput.value.trim()) ? phoneInput.value.trim() : 'Not Entered';
+        var proj = projSelect.value;
+        var dt = dateInput.value || 'Flexible Date';
+        var tm = timeSelect.value;
 
-</body>
-</html>
+        latestMessage =
