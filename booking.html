@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Slot Booking | SS Real Estates</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #f4f6f9; color: #1e293b; line-height: 1.5; }
+
+    /* HEADER */
+    header { background: #041c36; color: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #ffd54f; }
+    .logo { font-size: 20px; font-weight: bold; }
+    .logo span { color: #ffd54f; }
+    .back-btn { color: #ffd54f; text-decoration: none; font-size: 14px; font-weight: bold; border: 1px solid #ffd54f; padding: 6px 14px; border-radius: 6px; }
+
+    /* BANNER */
+    .banner { background: #082d54; color: #fff; text-align: center; padding: 38px 20px; border-bottom: 4px solid #ffd54f; }
+    .banner h1 { font-size: 28px; margin-bottom: 6px; }
+    .banner p { color: #ffd54f; font-size: 15px; font-weight: bold; }
+
+    /* BOOKING CARD */
+    .wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px; }
+    .booking-card { background: #fff; border-radius: 12px; padding: 32px 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-top: 5px solid #ffd54f; margin-bottom: 32px; }
+    .tag { display: inline-block; background: #041c36; color: #ffd54f; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 4px; margin-bottom: 10px; letter-spacing: 1px; }
+    .booking-card h2 { font-size: 26px; color: #041c36; margin-bottom: 6px; }
+    .sub-text { font-size: 15px; color: #475569; margin-bottom: 24px; }
+
+    /* FORM FIELDS */
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 13px; font-weight: bold; color: #041c36; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .form-group select,
+    .form-group input[type="date"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #041c36;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #041c36;
+      background: #f8fafc;
+    }
+
+    /* CONFIRM TOGGLE */
+    #slot-confirmed { display: none; }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: #166534;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .confirm-box {
+      display: none;
+      margin-top: 22px;
+      background: #f0fdf4;
+      border: 1.5px solid #166534;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    #slot-confirmed:checked ~ .confirm-box { display: block; }
+    .confirm-box h3 { color: #166534; font-size: 19px; margin-bottom: 8px; }
+    .confirm-box p { color: #1e293b; font-size: 15px; font-weight: bold; margin-bottom: 16px; }
+
+    /* BUTTONS */
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn { display: inline-block; background: #ffd54f; color: #041c36; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; text-align: center; flex: 1; min-width: 160px; }
+    .btn-wa { display: inline-block; background: #25d366; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; text-align: center; flex: 1; min-width: 160px; }
+
+    /* CONTACT */
+    .contact { background: #041c36; color: #fff; border-radius: 10px; padding: 28px 20px; border-top: 5px solid #ffd54f; text-align: center; }
+    .contact h3 { color: #ffd54f; margin-bottom: 12px; font-size: 22px; }
+    .c-row { margin-bottom: 10px; font-size: 15px; }
+    .c-row a { color: #ffd54f; font-weight: bold; text-decoration: underline; }
+    footer { background: #021122; color: #94a3b8; text-align: center; padding: 20px; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">SS <span>REAL ESTATES</span></div>
+    <a href="index.html" class="back-btn">&larr; Home</a>
+  </header>
+
+  <section class="banner">
+    <h1>Free Slot Booking</h1>
+    <p>Schedule Your Free Site Visit Across Amaravati &amp; Vijayawada</p>
+  </section>
+
+  <div class="wrap">
+    <div class="booking-card">
+      <input type="checkbox" id="slot-confirmed" />
+      <span class="tag">1-MONTH SCHEDULE</span>
+      <h2>Book Your Site Visit</h2>
+      <p class="sub-text">Choose your preferred project, pick a date from the calendar, and select a convenient time slot.</p>
+
+      <div class="form-group">
+        <label for="project-select">1. Select Project Name</label>
+        <select id="project-select">
+          <option value="Mukunda Fortune (Paritala - Open Plots)">Mukunda Fortune (Paritala - Open Plots)</option>
+          <option value="Fortune Empire City (Chalivendrapalem, Amaravati - Open Plots)">Fortune Empire City (Chalivendrapalem, Amaravati - Open Plots)</option>
+          <option value="Quantum City (Tadikonda, Amaravati - Villas & Villa Plots)">Quantum City (Tadikonda, Amaravati - Villas &amp; Villa Plots)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="visit-date">2. Select Date (Calendar - Next 30 Days)</label>
+        <input type="date" id="visit-date" />
+      </div>
+
+      <div class="form-group">
+        <label for="visit-time">3. Select Time Slot</label>
+        <select id="visit-time">
+          <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
+          <option value="Afternoon (2:00 PM - 5:00 PM)">Afternoon (2:00 PM - 5:00 PM)</option>
+          <option value="Evening (5:00 PM - 7:00 PM)">Evening (5:00 PM - 7:00 PM)</option>
+        </select>
+      </div>
+
+      <label for="slot-confirmed" class="submit-btn" id="confirm-btn">Confirm Free Slot &rarr;</label>
+
+      <div class="confirm-box">
+        <h3>Your Free Site Visit Slot is Ready!</h3>
+        <p id="selected-details">Tap below to confirm your slot with our team on WhatsApp or by phone.</p>
+        <div class="btn-row">
+          <a href="https://wa.me" target="_blank" rel="noopener" class="btn-wa">Send on WhatsApp</a>
+          <a href="tel:+919492944465" class="btn">Call +91 94929 44465</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact">
+      <h3>Contact SS Real Estates</h3>
+      <div class="c-row"><strong>Mobile &amp; WhatsApp:</strong> <a href="tel:+919492944465">+91 94929 44465</a></div>
+      <div class="c-row"><strong>Email:</strong> <a href="mailto:ssrealestates35@gmail.com">ssrealestates35@gmail.com</a></div>
+      <div class="c-row"><strong>Office Address:</strong> Guntupalli, Library Road, Ibrahimpatnam Mandal, NTR Dist, 521241</div>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>SS Real Estates</strong> - Dream - Invest - Grow</p>
+    <p>Guntupalli, Library Road, Ibrahimpatnam Mandal, NTR Dist, 521241</p>
+  </footer>
+
+  <script>
+    (function() {
+      var dateInput = document.getElementById('visit-date');
+      if (dateInput) {
+        var today = new Date();
+        var nextMonth = new Date();
+        nextMonth.setDate(today.getDate() + 30);
+
+        var minStr = today.toISOString().slice(0, 10);
+        var maxStr = nextMonth.toISOString().slice(0, 10);
+
+        dateInput.min = minStr;
+        dateInput.max = maxStr;
+        dateInput.value = minStr;
+      }
+
+      var confirmBtn = document.getElementById('confirm-btn');
+      if (confirmBtn) {
+        confirmBtn.addEventListener('click', function() {
+          var proj = document.getElementById('project-select').value;
+          var dt = document.getElementById('visit-date').value;
+          var tm = document.getElementById('visit-time').value;
+          document.getElementById('selected-details').textContent = 'Project: ' + proj + ' | Date: ' + dt + ' | Time: ' + tm;
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
