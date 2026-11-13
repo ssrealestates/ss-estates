@@ -8,7 +8,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
     body { background: #f4f6f9; color: #1e293b; line-height: 1.5; overflow-x: hidden; }
 
-    /* INTRO */
+    /* CINEMATIC ZOOM-THROUGH INTRO */
     #skip { display: none; }
     #skip:checked ~ #intro { display: none; }
     #intro { position: fixed; inset: 0; background: #041c36; color: #fff; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; overflow: hidden; animation: hideOverlay 0.8s ease-in forwards 2.8s; }
@@ -46,7 +46,7 @@
     .hero h2 { font-size: 18px; color: #ffd54f; margin-bottom: 14px; }
     .hero p { max-width: 550px; margin: 0 auto 24px; color: #cbd5e1; font-size: 15px; }
 
-    /* BUTTONS */
+    /* BUTTONS WITH WHATSAPP ICON */
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #ffd54f; color: #041c36; padding: 11px 22px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; margin: 5px; cursor: pointer; border: none; }
     .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25d366; color: #fff; padding: 11px 22px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; margin: 5px; cursor: pointer; border: none; }
     .wa-svg { width: 18px; height: 18px; fill: #ffffff; flex-shrink: 0; }
@@ -69,34 +69,15 @@
     }
     .float-wa svg { width: 32px; height: 32px; fill: #ffffff; }
 
-    /* MAIN CONTAINER */
-    main { max-width: 900px; margin: 0 auto; padding: 45px 20px; }
-
-    /* MIDDLE 2 BOXES */
-    .two-boxes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 35px; }
-    .cat-box { display: block; background: #ffffff; border-radius: 12px; padding: 34px 24px; text-align: center; text-decoration: none; color: #041c36; border-top: 5px solid #ffd54f; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    /* MAIN CONTAINER & THREE BOXES */
+    .wrap { max-width: 980px; margin: 0 auto; padding: 45px 20px; }
+    .three-boxes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 35px; }
+    .cat-box { display: flex; flex-direction: column; justify-content: space-between; align-items: center; background: #ffffff; border-radius: 12px; padding: 34px 24px; text-align: center; text-decoration: none; color: #041c36; border-top: 5px solid #ffd54f; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .cat-box:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.14); }
     .cat-tag { display: inline-block; background: #041c36; color: #ffd54f; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 4px; margin-bottom: 12px; letter-spacing: 1px; }
     .cat-box h3 { font-size: 26px; margin-bottom: 10px; color: #041c36; }
     .cat-box p { font-size: 14px; color: #475569; margin-bottom: 20px; }
     .cat-btn { display: inline-block; background: #041c36; color: #ffd54f; padding: 10px 22px; border-radius: 6px; font-weight: bold; font-size: 14px; }
-
-    /* 1-MONTH SLOT BOOKING CARD */
-    .booking-section { background: #ffffff; border-radius: 12px; padding: 28px 22px; margin-bottom: 35px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-top: 5px solid #166534; }
-    .booking-section h3 { font-size: 22px; color: #041c36; margin-bottom: 6px; }
-    .booking-section p.sub { font-size: 14px; color: #64748b; margin-bottom: 18px; }
-    .booking-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 18px; }
-    .field-group { display: flex; flex-direction: column; }
-    .field-group label { font-size: 12px; font-weight: bold; color: #041c36; margin-bottom: 6px; text-transform: uppercase; }
-    .field-group select { width: 100%; padding: 11px 12px; border: 1.5px solid #041c36; border-radius: 6px; font-size: 14px; color: #041c36; background: #f8fafc; font-weight: bold; }
-
-    #confirm-slot-toggle { display: none; }
-    .btn-book { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #166534; color: #fff; border: none; padding: 14px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; text-align: center; }
-
-    .slot-result { display: none; margin-top: 18px; background: #f0fdf4; border: 1.5px solid #166534; border-radius: 8px; padding: 18px; text-align: center; }
-    #confirm-slot-toggle:checked ~ .slot-result { display: block; }
-    .slot-result h4 { color: #166534; font-size: 18px; margin-bottom: 6px; }
-    .slot-result p { color: #1e293b; font-size: 14px; margin-bottom: 12px; font-weight: bold; }
 
     /* CONTACT */
     .contact { background: #041c36; color: #fff; border-radius: 10px; padding: 32px 20px; border-top: 5px solid #ffd54f; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -122,7 +103,6 @@
     <div class="logo">SS <span>REAL ESTATES</span></div>
     <nav>
       <a href="#categories">Projects</a>
-      <a href="#booking">Book Visit</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -138,20 +118,43 @@
     <a href="tel:+919492944465" class="btn">Call Now</a>
   </section>
 
-  <main>
-    <section class="two-boxes" id="categories">
+  <div class="wrap" id="categories">
+    <!-- THREE MATCHING BOXES -->
+    <div class="three-boxes">
       <a href="open-plots.html" target="_blank" class="cat-box">
-        <span class="cat-tag">RESIDENTIAL &amp; INVESTMENT</span>
-        <h3>Open Plots</h3>
-        <p>Explore clear-title residential open plots in prime Amaravati &amp; Vijayawada corridors.</p>
+        <div>
+          <span class="cat-tag">RESIDENTIAL &amp; INVESTMENT</span>
+          <h3>Open Plots</h3>
+          <p>Explore clear-title residential open plots in prime Amaravati &amp; Vijayawada corridors.</p>
+        </div>
         <span class="cat-btn">View Open Plots &nearr;</span>
       </a>
 
       <a href="villas.html" target="_blank" class="cat-box">
-        <span class="cat-tag">LUXURY LIVING</span>
-        <h3>Villas</h3>
-        <p>Explore open villa plots and 2 BHK, 3 BHK &amp; 4 BHK luxury villas in Amaravati Capital City.</p>
+        <div>
+          <span class="cat-tag">LUXURY LIVING</span>
+          <h3>Villas</h3>
+          <p>Explore open villa plots and 2 BHK, 3 BHK &amp; 4 BHK luxury villas in Amaravati Capital City.</p>
+        </div>
         <span class="cat-btn">View Villas &nearr;</span>
       </a>
-    </section>
 
+      <a href="https://wa.me" target="_blank" rel="noopener" class="cat-box">
+        <div>
+          <span class="cat-tag">SITE VISIT</span>
+          <h3>Free Slot Booking</h3>
+          <p>Schedule your free site visit for Mukunda Fortune, Fortune Empire City, or Quantum City.</p>
+        </div>
+        <span class="cat-btn">Book Free Slot &nearr;</span>
+      </a>
+    </div>
+
+    <!-- CONTACT CARD -->
+    <div class="contact" id="contact">
+      <h2>Contact SS Real Estates</h2>
+      <div class="c-row"><strong>Mobile &amp; WhatsApp:</strong> <a href="tel:+919492944465">+91 94929 44465</a></div>
+      <div class="c-row"><strong>Email:</strong> <a href="mailto:ssrealestates35@gmail.com">ssrealestates35@gmail.com</a></div>
+      <div class="c-row"><strong>Office Address:</strong> Guntupalli, Library Road, Ibrahimpatnam Mandal, NTR Dist, 521241</div>
+      <div class="c-row"><strong>Visiting Hours:</strong> Mon – Sun: 9:00 AM – 7:00 PM</div>
+      <div style="margin-top:20px;">
+        <a href="https://wa.me" target="_blank" rel="noopener" class="btn-wa">
