@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Villas | Quantum City - SS Real Estates</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #f4f6f9; color: #1e293b; line-height: 1.5; }
+
+    /* HEADER */
+    header { background: #041c36; color: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #ffd54f; }
+    .logo { font-size: 20px; font-weight: bold; }
+    .logo span { color: #ffd54f; }
+    .back-btn { color: #ffd54f; text-decoration: none; font-size: 14px; font-weight: bold; border: 1px solid #ffd54f; padding: 6px 14px; border-radius: 6px; }
+
+    /* BANNER */
+    .banner { background: #082d54; color: #fff; text-align: center; padding: 38px 20px; border-bottom: 4px solid #ffd54f; }
+    .banner h1 { font-size: 28px; margin-bottom: 6px; }
+    .banner p { color: #ffd54f; font-size: 15px; font-weight: bold; }
+
+    /* PROJECT CARD */
+    .wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px; }
+    .project-card { background: #fff; border-radius: 12px; padding: 32px 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-top: 5px solid #ffd54f; margin-bottom: 35px; }
+    .tag { display: inline-block; background: #041c36; color: #ffd54f; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 4px; margin-bottom: 10px; letter-spacing: 1px; }
+    .project-card h2 { font-size: 26px; color: #041c36; margin-bottom: 6px; }
+    .addr { font-size: 16px; font-weight: bold; color: #166534; margin-bottom: 20px; }
+    .hl-heading { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #041c36; font-weight: bold; margin: 20px 0 12px; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; }
+
+    /* 4 PROPERTY SELECTION COLUMNS */
+    .villa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .v-option { background: #f8fafc; border: 1.5px solid #041c36; border-radius: 8px; padding: 16px 12px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
+    .v-option h3 { font-size: 16px; color: #041c36; margin-bottom: 6px; }
+    .v-option .spec { font-size: 12px; font-weight: bold; color: #166534; margin-bottom: 12px; line-height: 1.4; }
+    .v-option a { display: block; background: #25d366; color: #fff; text-decoration: none; font-size: 12px; font-weight: bold; padding: 8px 10px; border-radius: 5px; }
+
+    /* LOCATION HIGHLIGHTS */
+    .hl-list { list-style: none; padding: 0; margin-bottom: 24px; }
+    .hl-list li { font-size: 15px; color: #334155; padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid #f1f5f9; }
+    .hl-list li:last-child { border-bottom: none; }
+    .hl-list li::before { content: "✔"; position: absolute; left: 0; color: #166534; font-weight: bold; }
+
+    /* BUTTONS */
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn { display: inline-block; background: #ffd54f; color: #041c36; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; text-align: center; flex: 1; min-width: 160px; }
+    .btn-wa { display: inline-block; background: #25d366; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; text-align: center; flex: 1; min-width: 160px; }
+
+    /* CONTACT */
+    .contact { background: #041c36; color: #fff; border-radius: 10px; padding: 28px 20px; border-top: 5px solid #ffd54f; text-align: center; }
+    .contact h3 { color: #ffd54f; margin-bottom: 12px; font-size: 22px; }
+    .c-row { margin-bottom: 10px; font-size: 15px; }
+    .c-row a { color: #ffd54f; font-weight: bold; text-decoration: underline; }
+    footer { background: #021122; color: #94a3b8; text-align: center; padding: 20px; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">SS <span>REAL ESTATES</span></div>
+    <a href="index.html" class="back-btn">&larr; Home</a>
+  </header>
+
+  <section class="banner">
+    <h1>Villas &amp; Villa Plots</h1>
+    <p>Amaravati Capital City Luxury Living</p>
+  </section>
+
+  <div class="wrap">
+    <div class="project-card">
+      <span class="tag">FEATURED VILLAS PROJECT</span>
+      <h2>Quantum City</h2>
+      <div class="addr">Address: Tadikonda, Amaravati Capital City</div>
+
+      <div class="hl-heading">Select Property Option</div>
+      <div class="villa-grid">
+        <div class="v-option">
+          <div>
+            <h3>Open Villa Plots</h3>
+            <div class="spec">&#8377;25,000 / Sq. Yd<br>160 - 350 Sq. Yds</div>
+          </div>
+          <a href="whatsapp://send?phone=919492944465&text=Hello%20SS%20Real%20Estates,%20I%20am%20interested%20in%20Open%20Villa%20Plots%20(Rs.%2025,000/Sq.Yd,%20160-350%20Sq.Yds)%20at%20Quantum%20City,%20Tadikonda.">Select &amp; WhatsApp</a>
+        </div>
+
+        <div class="v-option">
+          <div>
+            <h3>2 BHK Luxury Villas</h3>
+            <div class="spec">Modern Gated Community Living</div>
+          </div>
+          <a href="whatsapp://send?phone=919492944465&text=Hello%20SS%20Real%20Estates,%20I%20am%20interested%20in%202%20BHK%20Luxury%20Villas%20at%20Quantum%20City,%20Tadikonda.">Select &amp; WhatsApp</a>
+        </div>
+
+        <div class="v-option">
+          <div>
+            <h3>3 BHK Luxury Villas</h3>
+            <div class="spec">Spacious Family Luxury Villas</div>
+          </div>
+          <a href="whatsapp://send?phone=919492944465&text=Hello%20SS%20Real%20Estates,%20I%20am%20interested%20in%203%20BHK%20Luxury%20Villas%20at%20Quantum%20City,%20Tadikonda.">Select &amp; WhatsApp</a>
+        </div>
+
+        <div class="v-option">
+          <div>
+            <h3>4 BHK Luxury Villas</h3>
+            <div class="spec">Premium Independent Luxury Villas</div>
+          </div>
+          <a href="whatsapp://send?phone=919492944465&text=Hello%20SS%20Real%20Estates,%20I%20am%20interested%20in%204%20BHK%20Luxury%20Villas%20at%20Quantum%20City,%20Tadikonda.">Select &amp; WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hl-heading">Location Highlights</div>
+      <ul class="hl-list">
+        <li>Delhi Public School &ndash; 1 KM</li>
+        <li>Anantapur-Amaravathi Express Highway &ndash; 600 M</li>
+        <li>Inner Ring Road (IRR) &ndash; 3 KM / 5 Min</li>
+        <li>Outer Ring Road (ORR) &ndash; 15 Min drive</li>
+        <li>Tadikonda Railway Station &ndash; 4 KM</li>
+        <li>Ravela International Airport &ndash; 4.5 KM</li>
+        <li>AP Secretariat &ndash; 10 KM</li>
+        <li>CM New House &ndash; 13.5 KM</li>
+        <li>Guntur Bus Stand &ndash; 15 Min</li>
+        <li>Guntur Railway Station &ndash; 20 Min</li>
+        <li>VIT-AP University &ndash; 25 Min</li>
+        <li>SRM University &ndash; 25 Min</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="whatsapp://send?phone=919492944465&text=Hello%20SS%20Real%20Estates,%20I%20would%20like%20full%20details%20for%20Quantum%20City%20at%20Tadikonda,%20Amaravati." class="btn-wa">Chat on WhatsApp</a>
+        <a href="tel:+919492944465" class="btn">Call +91 94929 44465</a>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h3>Contact SS Real Estates</h3>
+      <div class="c-row"><strong>Mobile &amp; WhatsApp:</strong> <a href="tel:+919492944465">+91 94929 44465</a></div>
+      <div class="c-row"><strong>Email:</strong> <a href="mailto:ssrealestates35@gmail.com">ssrealestates35@gmail.com</a></div>
+      <div class="c-row"><strong>Office Address:</strong> Guntupalli, Library Road, Ibrahimpatnam Mandal, NTR Dist, 521241</div>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>SS Real Estates</strong> - Dream - Invest - Grow</p>
+    <p>Guntupalli, Library Road, Ibrahimpatnam Mandal, NTR Dist, 521241</p>
+  </footer>
+
+</body>
+</html>
