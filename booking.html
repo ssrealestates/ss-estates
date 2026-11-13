@@ -44,16 +44,14 @@
       background: #f8fafc;
     }
 
-    /* WHATSAPP BUTTON */
-    .wa-submit-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+    /* CONFIRM TOGGLE */
+    #slot-done-toggle { display: none; }
+    .confirm-btn {
+      display: block;
       width: 100%;
-      background: #25d366;
+      background: #166534;
       color: #ffffff;
-      text-decoration: none;
+      border: none;
       text-align: center;
       padding: 15px 20px;
       border-radius: 8px;
@@ -62,24 +60,28 @@
       cursor: pointer;
       margin-top: 10px;
     }
-    .wa-submit-btn:hover { background: #1ebe5d; }
-    .wa-svg { width: 20px; height: 20px; fill: #ffffff; flex-shrink: 0; }
+    .confirm-btn:hover { background: #14532d; }
 
-    /* LIVE PREVIEW */
-    .preview-box {
-      margin-top: 20px;
+    /* CONFIRMED RECEIPT BOX */
+    .receipt-box {
+      display: none;
+      margin-top: 22px;
       background: #f0fdf4;
-      border: 1.5px solid #166534;
+      border: 2px solid #166534;
       border-radius: 10px;
-      padding: 16px;
+      padding: 22px 18px;
       text-align: center;
     }
-    .preview-box h4 { color: #166534; font-size: 15px; margin-bottom: 6px; }
-    .preview-box p { color: #1e293b; font-size: 14px; font-weight: bold; line-height: 1.5; margin-bottom: 12px; }
-    .hint-text { font-size: 12px; color: #166534; margin-bottom: 12px; font-weight: bold; }
+    #slot-done-toggle:checked ~ .receipt-box { display: block; }
+    .receipt-box h3 { color: #166534; font-size: 20px; margin-bottom: 8px; }
+    .receipt-box p { color: #1e293b; font-size: 14px; font-weight: bold; line-height: 1.6; margin-bottom: 10px; }
+    .wa-hint { font-size: 13px; color: #166534; font-weight: bold; margin-bottom: 14px; }
 
     .btn-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    .btn { display: inline-block; background: #ffd54f; color: #041c36; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; flex: 1; min-width: 145px; border: none; cursor: pointer; }
+    .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25d366; color: #fff; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; flex: 1; min-width: 160px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; background: #ffd54f; color: #041c36; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; flex: 1; min-width: 140px; border: none; cursor: pointer; }
+    .btn-dark { display: inline-flex; align-items: center; justify-content: center; background: #041c36; color: #ffd54f; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; flex: 1; min-width: 140px; border: none; cursor: pointer; }
+    .wa-svg { width: 18px; height: 18px; fill: #ffffff; flex-shrink: 0; }
 
     /* CONTACT */
     .contact { background: #041c36; color: #fff; border-radius: 10px; padding: 28px 20px; border-top: 5px solid #ffd54f; text-align: center; }
@@ -103,6 +105,7 @@
 
   <div class="wrap">
     <div class="booking-card">
+      <input type="checkbox" id="slot-done-toggle" />
       <span class="tag">1-MONTH SCHEDULE</span>
       <h2>Book Your Site Visit</h2>
       <p class="sub-text">Enter your details, choose your preferred project, pick a date from the calendar, and select a time slot.</p>
@@ -131,7 +134,7 @@
 
       <div class="form-row">
         <div class="form-group">
-          <label for="visit-date">4. Select Date (Next 30 Days)</label>
+          <label for="visit-date">4. Select Date (Calendar)</label>
           <input type="date" id="visit-date" />
         </div>
 
@@ -145,18 +148,18 @@
         </div>
       </div>
 
-      <a href="https://wa.me" target="_blank" rel="noopener" class="wa-submit-btn" id="wa-booking-link">
-        <svg class="wa-svg" viewBox="0 0 32 32"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.47.65 4.88 1.88 7L2 30l7.18-1.84A13.93 13.93 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.4c-2.2 0-4.35-.6-6.22-1.73l-.45-.27-4.26 1.09 1.14-4.15-.29-.46A11.35 11.35 0 0 1 4.6 16c0-6.29 5.11-11.4 11.4-11.4S27.4 9.71 27.4 16 22.29 27.4 16 27.4zm6.25-8.54c-.34-.17-2.03-1-2.34-1.12-.31-.11-.54-.17-.77.17-.23.34-.88 1.12-1.08 1.35-.2.23-.4.26-.74.09-.34-.17-1.45-.53-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.37-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.54-.28-.67-.56-.58-.77-.59h-.66c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86 0 1.69 1.23 3.32 1.4 3.55.17.23 2.42 3.7 5.86 5.18.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.14.66-.1 2.03-.83 2.31-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/></svg>
-        Confirm &amp; Open WhatsApp &rarr;
-      </a>
+      <label for="slot-done-toggle" class="confirm-btn" id="confirm-label-btn">Confirm Free Slot &rarr;</label>
 
-      <div class="preview-box">
-        <h4>Your Selected Slot Summary</h4>
-        <p id="selected-details"></p>
-        <div class="hint-text">Your details copy automatically when you click Open WhatsApp &mdash; just Paste &amp; Send in chat!</div>
+      <div class="receipt-box" id="receipt-box">
+        <h3>Your Free Site Visit Slot is Ready!</h3>
+        <p id="selected-details">Your slot details are ready. Tap Send on WhatsApp below to message +91 94929 44465.</p>
+        <div class="wa-hint">Details copy automatically &mdash; just Paste &amp; Send in WhatsApp!</div>
         <div class="btn-row">
-          <button type="button" class="btn" id="copy-btn">Copy Slot Message</button>
-          <a href="mailto:ssrealestates35@gmail.com" class="btn" id="email-btn">Send via Email</a>
+          <a href="https://wa.me" target="_blank" rel="noopener" class="btn-wa" id="wa-send-btn">
+            <svg class="wa-svg" viewBox="0 0 32 32"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.47.65 4.88 1.88 7L2 30l7.18-1.84A13.93 13.93 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.4c-2.2 0-4.35-.6-6.22-1.73l-.45-.27-4.26 1.09 1.14-4.15-.29-.46A11.35 11.35 0 0 1 4.6 16c0-6.29 5.11-11.4 11.4-11.4S27.4 9.71 27.4 16 22.29 27.4 16 27.4zm6.25-8.54c-.34-.17-2.03-1-2.34-1.12-.31-.11-.54-.17-.77.17-.23.34-.88 1.12-1.08 1.35-.2.23-.4.26-.74.09-.34-.17-1.45-.53-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.37-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.54-.28-.67-.56-.58-.77-.59h-.66c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86 0 1.69 1.23 3.32 1.4 3.55.17.23 2.42 3.7 5.86 5.18.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.14.66-.1 2.03-.83 2.31-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/></svg>
+            Send on WhatsApp
+          </a>
+          <button type="button" class="btn-dark" id="copy-btn">Copy Slot Details</button>
           <a href="tel:+919492944465" class="btn">Call +91 94929 44465</a>
         </div>
       </div>
@@ -183,23 +186,3 @@
       var dateInput = document.getElementById('visit-date');
       var projSelect = document.getElementById('project-select');
       var timeSelect = document.getElementById('visit-time');
-      var detailsText = document.getElementById('selected-details');
-      var waLink = document.getElementById('wa-booking-link');
-      var copyBtn = document.getElementById('copy-btn');
-      var emailBtn = document.getElementById('email-btn');
-      var latestMessage = '';
-
-      if (dateInput) {
-        var today = new Date();
-        var nextMonth = new Date();
-        nextMonth.setDate(today.getDate() + 30);
-
-        var minStr = today.toISOString().slice(0, 10);
-        var maxStr = nextMonth.toISOString().slice(0, 10);
-
-        dateInput.min = minStr;
-        dateInput.max = maxStr;
-        dateInput.value = minStr;
-      }
-
-      function syncBooking() {
