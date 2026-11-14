@@ -91,7 +91,7 @@
       </ul>
 
       <div class="btn-row">
-        <a href="whatsapp://send?phone=919492944465" class="btn-wa">Chat on WhatsApp</a>
+        <a href="https://whatsapp.com" target="_blank" rel="noopener" class="btn-wa wa-link">Chat on WhatsApp</a>
         <a href="tel:+919492944465" class="btn">Call +91 94929 44465</a>
       </div>
     </div>
@@ -118,7 +118,7 @@
       </ul>
 
       <div class="btn-row">
-        <a href="whatsapp://send?phone=919492944465" class="btn-wa">Chat on WhatsApp</a>
+        <a href="https://whatsapp.com" target="_blank" rel="noopener" class="btn-wa wa-link">Chat on WhatsApp</a>
         <a href="tel:+919492944465" class="btn">Call +91 94929 44465</a>
       </div>
     </div>
@@ -144,7 +144,7 @@
       </ul>
 
       <div class="btn-row">
-        <a href="whatsapp://send?phone=919492944465" class="btn-wa">Chat on WhatsApp</a>
+        <a href="https://whatsapp.com" target="_blank" rel="noopener" class="btn-wa wa-link">Chat on WhatsApp</a>
         <a href="tel:+919492944465" class="btn">Call +91 94929 44465</a>
       </div>
     </div>
@@ -162,6 +162,17 @@
     <p><strong>SS Real Estates</strong> - Dream - Invest - Grow</p>
     <p>Guntupalli, Library Road, Ibrahimpatnam Mandal, NTR Dist, 521241</p>
   </footer>
+
+  <script>
+    (function() {
+      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        var links = document.querySelectorAll('.wa-link');
+        for (var i = 0; i < links.length; i++) {
+          links[i].href = 'https://wa.me';
+        }
+      }
+    })();
+  </script>
 
 </body>
 </html>
